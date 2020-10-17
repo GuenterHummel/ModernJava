@@ -5,6 +5,7 @@ public class LambdaTest {
     public static void main(String[] args) {
 	    System.out.println("Lambda Test...");
 
+
 	    Runnable runnableAsNormalMethod = new Runnable() {
             @Override
             public void run() {
@@ -14,6 +15,7 @@ public class LambdaTest {
 	    runnableAsNormalMethod.run();
 
 	    Runnable runnableWithLambda = () -> System.out.println("Runnable as Lambda");
+
 	    runnableWithLambda.run();
     }
 }
