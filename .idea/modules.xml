@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ModernJava.iml" filepath="$PROJECT_DIR$/ModernJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/lambda-test/lambda-test.iml" filepath="$PROJECT_DIR$/lambda-test/lambda-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/machine-learning/machine-learning.iml" filepath="$PROJECT_DIR$/machine-learning/machine-learning.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,153 @@
+def current_version = version
+
+ext {
+	log4j_version = '1.2.17'
+ 	junit_version = '4.12'
+ 	guava_version = '30.0-jre'
+ 	bouncy_castle_version = '1.68'
+}
+
+allprojects {
+}
+
+import java.text.SimpleDateFormat
+
+def buildTime() {
+	def df = new SimpleDateFormat("yyyy-MM-dd HH:mm") 
+	df.setTimeZone(TimeZone.getTimeZone("UTC"))
+	return df.format(new Date())
+}
+
+def currentBuildJvm = Jvm.current()
+def currentBuildTime = buildTime()
+
+wrapper {
+	gradleVersion = gradle_version
+}
+
+subprojects {
+	apply plugin: 'jacoco'
+	apply plugin: 'eclipse'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+	repositories {
+        mavenCentral()
+    }
+
+	dependencies {
+		testImplementation "junit:junit:${junit_version}"
+		implementation "log4j:log4j:${log4j_version}"
+		implementation "com.google.guava:guava:${guava_version}"
+	}
+	
+	jar {
+		manifest {
+			attributes "Built-By" : "$System.env.USERNAME",
+					   "Built-With" : "Java ${-> currentBuildJvm}",
+					   "Gradle-Version" : "${-> gradle.gradleVersion}",
+				       "Specification-Title" : "${-> project.name.toUpperCase()}",
+				       "Specification-Vendor" : "${-> vendor}",
+				       "Specification-Version" : "${-> archiveVersion}",
+				       "Implementation-Title" :	"${-> project.name}",
+				       "Implementation-Vendor" : "${-> vendor}",
+				       "Implementation-Version" : "${-> archiveVersion}"
+        }
+    }
+	
+	javadoc {
+		def tagList = ["remarks:a:Remarks:", 
+					   "example:a:Example Code:", 
+					   "format:a:Format:", 
+					   "guidance:a:Recommended Reaction:"] 
+
+		failOnError = false
+		title="${project.name}, ${version} <br>API Specification"
+		options.memberLevel = JavadocMemberLevel.PRIVATE
+		options.author= true
+		options.windowTitle = "${project.name}, ${version} - Java Documentation"
+		options.header = "${project.name} ${version}"
+		options.overview="src/main/java/overview.html"
+		options.setTags(tagList)
+		options.stylesheetFile = new File("${rootProject.projectDir}/util", "stylesheet.css")		
+		options.bottom="Copyright &#169; 2020 <a href='http://www.sbs.co.at' target='_blank'>SBS Software Ges.m.b.H.</a><br><font size='-1'>Creation Date: ${buildTime()}</font></br>"
+	}    
+
+    jacocoTestReport {
+       getAdditionalSourceDirs().from(files(sourceSets.main.allSource.srcDirs))
+       getSourceDirectories().from(files(sourceSets.main.allSource.srcDirs))
+       getClassDirectories().from(files(sourceSets.main.output))
+       reports {
+           html.enabled = true
+		   html.destination = file("$buildDir/reports/jacoco/html")
+		   xml.enabled = false
+           csv.enabled = false
+        }
+    }
+		
+	test {
+        ignoreFailures = true
+        
+        testLogging {
+            exceptionFormat = 'full'
+        }
+        
+        jacoco {
+            destinationFile = file("$buildDir/reports/jacoco/test.exec")
+            reports {
+	       		html.enabled = true
+           		html.destination = file("$buildDir/reports/jacoco/html")
+           	}
+        }    
+    }
+
+	task sourcesJar(type: Jar, dependsOn: classes) {
+        //noinspection GroovyAccessibility
+        archiveClassifier = 'sources'
+		from sourceSets.main.allSource
+	}
+		
+	task testSourcesJar(type: Jar, dependsOn: classes) {
+        //noinspection GroovyAccessibility
+        archiveClassifier = 'testsources'
+		from sourceSets.test.allSource
+	}
+		
+	task javadocJar(type: Jar, dependsOn: javadoc) {
+        //noinspection GroovyAccessibility
+        archiveClassifier = 'javadoc'
+		from javadoc.destinationDir
+	}
+
+	group = 'at.co.sbs.gh.learning'
+}
+
+task createDistDirectory() {
+	def distDir = file("${rootProject.projectDir}/distrib")
+	distDir.mkdirs()
+}
+
+task jacocoRootReport(type: JacocoReport) {
+    dependsOn = subprojects.test
+    getExecutionData().from(files(subprojects.jacocoTestReport.executionData))
+    getSourceDirectories().from(files(subprojects.sourceSets.main.allSource.srcDirs))
+    getClassDirectories().from(files(subprojects.sourceSets.main.output))
+    reports {
+    	html.destination = file("jacoco")
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = false
+    }
+    onlyIf = {
+        true
+    }
+    doFirst {
+        //noinspection GroovyAccessibility
+        executionData = files(executionData.findAll {
+            it.exists()
+        })
+    }    
+}
+
+defaultTasks 'clean', 'build', 'javadocJar', 'sourcesJar'
+// 'publish'
