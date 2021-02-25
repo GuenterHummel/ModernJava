@@ -18,7 +18,7 @@ def buildTime() {
 	return df.format(new Date())
 }
 
-def currentBuildJvm = Jvm.current()
+def currentBuildJvm = org.gradle.internal.jvm.Jvm.current()
 def currentBuildTime = buildTime()
 
 wrapper {

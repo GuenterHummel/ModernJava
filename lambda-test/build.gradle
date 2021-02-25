@@ -17,6 +17,6 @@ dependencies {
 jar {
     manifest {
         attributes("Specification-Title": "Learning")
-        attributes("Implementation-Title": "machine-learning")
+        attributes("Implementation-Title": "lambda-test")
     }
 }
