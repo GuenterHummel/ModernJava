@@ -69,9 +69,7 @@ subprojects {
 		options.header = "${project.name} ${version}"
 		options.overview="src/main/java/overview.html"
 		options.setTags(tagList)
-		options.stylesheetFile = new File("${rootProject.projectDir}/util", "stylesheet.css")		
-		options.bottom="Copyright &#169; 2020 <a href='http://www.sbs.co.at' target='_blank'>SBS Software Ges.m.b.H.</a><br><font size='-1'>Creation Date: ${buildTime()}</font></br>"
-	}    
+	}
 
     jacocoTestReport {
        getAdditionalSourceDirs().from(files(sourceSets.main.allSource.srcDirs))

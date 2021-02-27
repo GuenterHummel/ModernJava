@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":machine-learning" external.linked.project.path="$MODULE_DIR$/../../../machine-learning" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="at.co.sbs.gh.learning" external.system.module.version="0.0.1" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../machine-learning">
+      <excludeFolder url="file://$MODULE_DIR$/../../../machine-learning/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../machine-learning/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
