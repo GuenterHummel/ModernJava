@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ModernJava.iml" filepath="$PROJECT_DIR$/.idea/ModernJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.main.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.test.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.test.iml" />
+    </modules>
+  </component>
+</project>
