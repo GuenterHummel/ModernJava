@@ -1,28 +1,19 @@
 package me.schwabe.examples.javamag;
 
+/**
+ * Perceptron Class
+ */
 public class Perceptron {
-    
-private final static int DEFAULTDIM = 2;
-    
-private final float weights[];
-    
-public Perceptron() {
-        this(DEFAULTDIM);
-    }
-    
-public Perceptron(int dim) {
-        this(new float[dim]);
-    }
-    
-public Perceptron(float[] weights) {
+
+    private final float[] weights;
+
+    public Perceptron(float[] weights) {
         this.weights = weights;
     }
-    
-public float[] getWeights() { return weights; }
-    
-public int getDim() { return weights.length; };
-    
-public boolean isPositive(float[] input) throws IllegalArgumentException {
+
+    public int getDim() { return weights.length; }
+
+    public boolean isPositive(float[] input) throws IllegalArgumentException {
         if (input.length != getDim())
             throw new IllegalArgumentException("Dimensionality mismatch.");
 
@@ -44,8 +35,8 @@ public boolean isPositive(float[] input) throws IllegalArgumentException {
 
     private void normalizeWeightVector() {
         double norm = 0f;
-        for (int i=0; i<weights.length; i++) {
-            norm += weights[i] * weights[i];
+        for (float weight : weights) {
+            norm += weight * weight;
         }
         norm = Math.sqrt(norm);
         for (int i=0; i<weights.length; i++) {
