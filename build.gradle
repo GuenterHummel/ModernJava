@@ -1,10 +1,10 @@
 def current_version = version
 
 ext {
-	log4j_version = '1.2.17'
+	log4j_version = '2.16.0'
  	junit_version = '4.12'
- 	guava_version = '30.0-jre'
- 	bouncy_castle_version = '1.68'
+ 	guava_version = '31.0.1-jre'
+ 	bouncy_castle_version = '1.70'
 }
 
 allprojects {
@@ -37,7 +37,7 @@ subprojects {
 
 	dependencies {
 		testImplementation "junit:junit:${junit_version}"
-		implementation "log4j:log4j:${log4j_version}"
+		implementation "org.apache.logging.log4j:log4j:${log4j_version}"
 		implementation "com.google.guava:guava:${guava_version}"
 	}
 	

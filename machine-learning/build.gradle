@@ -10,7 +10,6 @@ test {
 defaultTasks 'clean', 'build', 'javadoc'
 
 dependencies {
-    api "log4j:log4j:${log4j_version}"
     api "org.bouncycastle:bcprov-jdk15on:${bouncy_castle_version}"
 }
 
