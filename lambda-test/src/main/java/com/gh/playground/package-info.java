@@ -1,5 +1,3 @@
-package com.gh.playground;
-
 /**
  * Domain classes used to produce .....
  * <p>
@@ -10,3 +8,6 @@ package com.gh.playground;
  * @author Guenter Hummel
  * @version 0.1
  */
+
+package com.gh.playground;
+

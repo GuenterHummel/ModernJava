@@ -11,14 +11,15 @@ allprojects {
 }
 
 import java.text.SimpleDateFormat
+import org.gradle.internal.jvm.Jvm
 
-def buildTime() {
+def static buildTime() {
 	def df = new SimpleDateFormat("yyyy-MM-dd HH:mm") 
 	df.setTimeZone(TimeZone.getTimeZone("UTC"))
 	return df.format(new Date())
 }
 
-def currentBuildJvm = org.gradle.internal.jvm.Jvm.current()
+def currentBuildJvm = Jvm.current()
 def currentBuildTime = buildTime()
 
 wrapper {
@@ -70,7 +71,7 @@ subprojects {
 
 		failOnError = false
 		title="${project.name}, ${version} <br>API Specification"
-		options.memberLevel = JavadocMemberLevel.PRIVATE
+		options.memberLevel = JavadocMemberLevel.PROTECTED
 		options.author= true
 		options.windowTitle = "${project.name}, ${version} - Java Documentation"
 		options.header = "${project.name} ${version}"
@@ -83,10 +84,10 @@ subprojects {
        getSourceDirectories().from(files(sourceSets.main.allSource.srcDirs))
        getClassDirectories().from(files(sourceSets.main.output))
        reports {
-           html.enabled = true
-		   html.destination = file("$buildDir/reports/jacoco/html")
-		   xml.enabled = false
-           csv.enabled = false
+           html.required = true
+		   html.outputLocation = file("$buildDir/reports/jacoco/html")
+		   xml.required = false
+           csv.required = false
         }
     }
 		
@@ -100,8 +101,8 @@ subprojects {
         jacoco {
             destinationFile = file("$buildDir/reports/jacoco/test.exec")
             reports {
-	       		html.enabled = true
-           		html.destination = file("$buildDir/reports/jacoco/html")
+	       		html.required = true
+           		html.outputLocation = file("$buildDir/reports/jacoco/html")
            	}
         }    
     }
@@ -120,10 +121,10 @@ task jacocoRootReport(type: JacocoReport) {
     getSourceDirectories().from(files(subprojects.sourceSets.main.allSource.srcDirs))
     getClassDirectories().from(files(subprojects.sourceSets.main.output))
     reports {
-    	html.destination = file("jacoco")
-        html.enabled = true
-        xml.enabled = true
-        csv.enabled = false
+    	html.outputLocation = file("jacoco")
+        html.required = true
+        xml.required = true
+        csv.required = false
     }
     onlyIf = {
         true
