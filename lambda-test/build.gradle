@@ -1,6 +1,12 @@
-apply plugin: 'java-library'
+plugins {
+    id 'application'
+}
 
 configurations.implementation.setCanBeResolved(true)
+
+application {
+    mainClass = 'com.gh.playground.LambdaTest'
+}
 
 test {
     ignoreFailures = true
@@ -10,10 +16,12 @@ test {
 defaultTasks 'clean', 'build', 'javadoc'
 
 dependencies {
-    api "org.bouncycastle:bcprov-jdk15on:${bouncy_castle_version}"
+    implementation "org.bouncycastle:bcprov-jdk15on:${bouncy_castle_version}"
+    implementation "org.apache.logging.log4j:log4j-api:${log4j_version}"
+    implementation "org.apache.logging.log4j:log4j-core:${log4j_version}"
 }
 
-jar {
+tasks.named('jar') {
     manifest {
         attributes("Specification-Title": "Learning")
         attributes("Implementation-Title": "lambda-test")

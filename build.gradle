@@ -40,8 +40,15 @@ subprojects {
 		implementation "org.apache.logging.log4j:log4j:${log4j_version}"
 		implementation "com.google.guava:guava:${guava_version}"
 	}
-	
-	jar {
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+        withSourcesJar()
+    }
+
+	tasks.named('jar') {
 		manifest {
 			attributes "Built-By" : "$System.env.USERNAME",
 					   "Built-With" : "Java ${-> currentBuildJvm}",
@@ -56,7 +63,7 @@ subprojects {
     }
 	
 	javadoc {
-		def tagList = ["remarks:a:Remarks:", 
+		def tagList = ["remarks:a:Remarks:",
 					   "example:a:Example Code:", 
 					   "format:a:Format:", 
 					   "guidance:a:Recommended Reaction:"] 
@@ -99,24 +106,6 @@ subprojects {
         }    
     }
 
-	task sourcesJar(type: Jar, dependsOn: classes) {
-        //noinspection GroovyAccessibility
-        archiveClassifier = 'sources'
-		from sourceSets.main.allSource
-	}
-		
-	task testSourcesJar(type: Jar, dependsOn: classes) {
-        //noinspection GroovyAccessibility
-        archiveClassifier = 'testsources'
-		from sourceSets.test.allSource
-	}
-		
-	task javadocJar(type: Jar, dependsOn: javadoc) {
-        //noinspection GroovyAccessibility
-        archiveClassifier = 'javadoc'
-		from javadoc.destinationDir
-	}
-
 	group = 'at.co.sbs.gh.learning'
 }
 
@@ -147,5 +136,5 @@ task jacocoRootReport(type: JacocoReport) {
     }    
 }
 
-defaultTasks 'clean', 'build', 'javadocJar', 'sourcesJar'
+defaultTasks 'clean', 'build', 'javadoc'
 // 'publish'

@@ -1,10 +1,12 @@
 package com.gh.playground;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  * Lambda Demo Class
  */
 public class LambdaTest {
-
+    static final private Logger logger = LogManager.getLogger(LambdaTest.class.getName());
     /**
      * main method
      * @param args commandline arguments

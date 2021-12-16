@@ -1,4 +1,6 @@
-apply plugin: 'java-library'
+plugins {
+    id 'java-library'
+}
 
 configurations.implementation.setCanBeResolved(true)
 
@@ -13,7 +15,7 @@ dependencies {
     api "org.bouncycastle:bcprov-jdk15on:${bouncy_castle_version}"
 }
 
-jar {
+tasks.named('jar') {
     manifest {
         attributes("Specification-Title": "Learning")
         attributes("Implementation-Title": "machine-learning")
