@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.16.0/ca12fb3902ecfcba1e1357ebfc55407acec30ede/log4j-core-2.16.0.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.16.0/4a690f7ccc550878ffe53472a4753c2d3bb7331a/log4j-core-2.16.0-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.16.0/b007950c0c32ab8f6e237db486079dfb5ec807e7/log4j-core-2.16.0-sources.jar!/" />
     </SOURCES>
