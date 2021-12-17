@@ -6,23 +6,23 @@ import org.apache.logging.log4j.Logger;
  * Lambda Demo Class
  */
 public class LambdaTest {
-    static final private Logger logger = LogManager.getLogger(LambdaTest.class.getName());
+    final static private Logger logger = LogManager.getLogger(LambdaTest.class.getName());
     /**
      * main method
      * @param args commandline arguments
      */
     public static void main(String[] args) {
-	    System.out.println("Lambda Test...");
+	    logger.info("Lambda Test...");
 
 	    Runnable runnableAsNormalMethod = new Runnable() {
             @Override
             public void run() {
-                System.out.println("Runnable as normal method");
+                logger.info("Runnable as normal method");
             }
 	    };
 	    runnableAsNormalMethod.run();
 
-	    Runnable runnableWithLambda = () -> System.out.println("Runnable as Lambda");
+	    Runnable runnableWithLambda = () -> logger.info("Runnable as Lambda");
 
 	    runnableWithLambda.run();
     }

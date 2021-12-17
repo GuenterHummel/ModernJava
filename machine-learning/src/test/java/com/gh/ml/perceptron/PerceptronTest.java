@@ -1,4 +1,4 @@
-package me.schwabe.examples.javamag;
+package com.gh.ml.perceptron;
 
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
