@@ -1,1 +1,3 @@
-include ':lambda-test', ':machine-learning'
+include ':lambda-test', ':machine-learning', ':threading-test'
+include 'threading-test'
+

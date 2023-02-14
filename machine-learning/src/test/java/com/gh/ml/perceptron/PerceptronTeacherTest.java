@@ -1,6 +1,6 @@
 package com.gh.ml.perceptron;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class PerceptronTeacherTest {
 	private static final float[][] testInputs1 = { {1.0f, 1.0f}, {1.0f, -1.0f}, {-1.0f, 1.0f}, {-1.0f, -1.0f} };

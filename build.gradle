@@ -1,9 +1,9 @@
 def current_version = version
 
 ext {
-	log4j_version = '2.16.0'
- 	junit_version = '4.12'
- 	guava_version = '31.0.1-jre'
+    log4j2_version = "2.19.0"
+ 	junit_version = '5.9.1'
+ 	guava_version = '31.1-jre'
  	bouncy_castle_version = '1.70'
 }
 
@@ -37,9 +37,10 @@ subprojects {
     }
 
 	dependencies {
-		testImplementation "junit:junit:${junit_version}"
-		implementation "org.apache.logging.log4j:log4j:${log4j_version}"
-		implementation "com.google.guava:guava:${guava_version}"
+        testImplementation "org.junit.jupiter:junit-jupiter:${junit_version}"
+        implementation "org.apache.logging.log4j:log4j-api:${log4j2_version}"
+        implementation "org.apache.logging.log4j:log4j-core:${log4j2_version}"
+        implementation "com.google.guava:guava:${guava_version}"
 	}
 
     java {

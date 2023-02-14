@@ -11,12 +11,6 @@ test {
 
 defaultTasks 'clean', 'build', 'javadoc'
 
-dependencies {
-    api "org.bouncycastle:bcprov-jdk15on:${bouncy_castle_version}"
-    implementation "org.apache.logging.log4j:log4j-api:${log4j_version}"
-    implementation "org.apache.logging.log4j:log4j-core:${log4j_version}"
-}
-
 tasks.named('jar') {
     manifest {
         attributes("Specification-Title": "Learning")
