@@ -2,8 +2,14 @@ package com.gh.playground.threading;
 
 import java.util.function.Consumer;
 
+/**
+ * Example for usage of synchronized keyword
+ */
 public class SynchronizedExample {
 
+    /**
+     * @param args command line args
+     */
     public static void main(String[] args) {
 
         Consumer<String> func = (String param) -> {
