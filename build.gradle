@@ -4,7 +4,7 @@ ext {
     log4j2_version = "2.20.0"
  	junit_version = '5.9.2'
  	guava_version = '31.1-jre'
- 	bouncy_castle_version = '1.70‚'
+ 	bouncy_castle_version = '1.70'
 }
 
 allprojects {
@@ -45,7 +45,7 @@ subprojects {
 
     java {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(17)
+            languageVersion = JavaLanguageVersion.of(20)
         }
         withSourcesJar()
     }
