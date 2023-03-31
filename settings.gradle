@@ -1,3 +1,5 @@
-include ':lambda-test', ':machine-learning', ':threading-test'
+include 'lambda-test'
+include 'machine-learning'
 include 'threading-test'
+include 'regex-test'
 

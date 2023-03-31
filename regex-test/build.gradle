@@ -1,0 +1,23 @@
+plugins {
+    id 'application'
+}
+
+configurations.implementation.setCanBeResolved(true)
+
+application {
+    mainClass = 'com.gh.playground.LambdaTest'
+}
+
+test {
+    ignoreFailures = true
+    maxParallelForks = 1
+}
+
+defaultTasks 'clean', 'build', 'javadoc'
+
+tasks.named('jar') {
+    manifest {
+        attributes("Specification-Title": "Learning")
+        attributes("Implementation-Title": "lambda-test")
+    }
+}
