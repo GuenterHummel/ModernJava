@@ -3,6 +3,9 @@ package com.gh.playground.regex;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Test class for checking regex and spaces
+ */
 public class PciTestAppender {
 
     public static boolean findPattern (String pan, String testString) {
@@ -10,7 +13,7 @@ public class PciTestAppender {
 
         for (int i = 0; i < pan.length(); i++) {
             regexBuffer.append(pan.charAt(i));
-            regexBuffer.append("\\s*");
+            regexBuffer.append("\\s*\\h*");
         }
 
         final String regex = regexBuffer.toString();

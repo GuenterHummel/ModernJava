@@ -2,11 +2,11 @@
   <configuration default="false" name="LambdaTest" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/openjdk-17" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-    <option name="MAIN_CLASS_NAME" value="com.gh.playground.LambdaTest" />
+    <option name="MAIN_CLASS_NAME" value="com.gh.playground.lambda.LambdaTest" />
     <module name="ModernJava.lambda-test.main" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.gh.playground.*" />
+        <option name="PATTERN" value="com.gh.playground.lambda.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

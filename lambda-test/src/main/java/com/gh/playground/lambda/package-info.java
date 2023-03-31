@@ -9,5 +9,5 @@
  * @version 0.1
  */
 
-package com.gh.playground;
+package com.gh.playground.lambda;
 
