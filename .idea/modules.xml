@@ -12,6 +12,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.iml" filepath="$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.iml" filepath="$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-tets/ModernJava.string-tets.main.iml" filepath="$PROJECT_DIR$/.idea/modules/string-tets/ModernJava.string-tets.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-tets/ModernJava.string-tets.test.iml" filepath="$PROJECT_DIR$/.idea/modules/string-tets/ModernJava.string-tets.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.test.iml" />

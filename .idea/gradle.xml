@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/lambda-test" />
             <option value="$PROJECT_DIR$/machine-learning" />
             <option value="$PROJECT_DIR$/regex-test" />
+            <option value="$PROJECT_DIR$/string-test" />
             <option value="$PROJECT_DIR$/threading-test" />
           </set>
         </option>
