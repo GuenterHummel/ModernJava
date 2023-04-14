@@ -5,7 +5,7 @@ plugins {
 configurations.implementation.setCanBeResolved(true)
 
 application {
-    mainClass = 'com.gh.playground.LambdaTest'
+    mainClass = 'com.gh.playground.regex.PciTestAppender'
 }
 
 test {
