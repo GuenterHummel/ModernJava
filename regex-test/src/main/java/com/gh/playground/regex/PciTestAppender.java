@@ -8,6 +8,12 @@ import java.util.regex.Pattern;
  */
 public class PciTestAppender {
 
+    /**
+     * Tests the usage of regex in Java
+     * @param pan the orginal PAN
+     * @param testString the string with a probable PAN with in
+     * @return <code>true</code> if the PAN could be found within the test string
+     */
     public static boolean findPattern (String pan, String testString) {
         final StringBuilder regexBuffer = new StringBuilder();
 
@@ -24,6 +30,10 @@ public class PciTestAppender {
         return matcher.find();
     }
 
+    /**
+     * Test main method
+     * @param args default main arguments
+     */
     public static void main(String[] args) {
 
         final String testPAN = "5413339000001513";

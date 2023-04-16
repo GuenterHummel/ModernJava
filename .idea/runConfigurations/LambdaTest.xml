@@ -1,7 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="LambdaTest" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/openjdk-17" />
-    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="ALTERNATIVE_JRE_PATH" value="17" />
     <option name="MAIN_CLASS_NAME" value="com.gh.playground.lambda.LambdaTest" />
     <module name="ModernJava.lambda-test.main" />
     <extension name="coverage">
