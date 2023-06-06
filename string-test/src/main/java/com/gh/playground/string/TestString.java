@@ -2,11 +2,18 @@ package com.gh.playground.string;
 
 import java.util.GregorianCalendar;
 
+/**
+ * Demo Class to test StringBuilder against String and StringBuffer
+ */
 public class TestString {
     static boolean isNotEmpty(String str) {
         return str != null && str.length() != 0;
     }
 
+    /**
+     * main method
+     * @param args commandline arguments
+     */
     public static void main(String[] args) {
         testStringBufferPerformance();
         testStringBuilderPerformance();

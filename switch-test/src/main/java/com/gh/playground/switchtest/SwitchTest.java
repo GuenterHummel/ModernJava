@@ -3,7 +3,14 @@ package com.gh.playground.switchtest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
+/**
+ * Demo Class to test modern switch in Java
+ */
 public class SwitchTest {
+    /**
+     * main method
+     * @param args commandline arguments
+     */
     public static void main(String[] args) {
         System.out.println("The different switch");
 
