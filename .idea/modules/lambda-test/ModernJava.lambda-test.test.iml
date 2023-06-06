@@ -5,6 +5,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../lambda-test/src/test">
       <sourceFolder url="file://$MODULE_DIR$/../../../lambda-test/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../lambda-test/src/test/resources" type="java-test-resource" />
     </content>
     <content url="file://$MODULE_DIR$/../../../lambda-test/src/test">
       <sourceFolder url="file://$MODULE_DIR$/../../../lambda-test/src/test/java" isTestSource="true" />

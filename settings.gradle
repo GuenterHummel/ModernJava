@@ -3,4 +3,7 @@ include 'machine-learning'
 include 'threading-test'
 include 'regex-test'
 include 'string-test'
+include 'switch-test'
+include 'switch-test:switch-test'
+findProject(':switch-test:switch-test')?.name = 'switch-test'
 
