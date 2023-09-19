@@ -35,7 +35,6 @@ public class PciTestAppender {
      * @param args default main arguments
      */
     public static void main(String[] args) {
-
         final String testPAN = "5413339000001513";
         final String testMsgDefault = "Test message 5413339000001513";
         final String testMsgBlank = "Test message 5 4 1 3 3 3 9 0 0 0 0 0 1 5 1 3";
