@@ -10,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 import java.security.spec.KeySpec;
 import java.util.Base64;
 import java.util.HexFormat;
-import java.util.Objects;
 
 public class PasswordContainer {
     private static final String SECRET_KEY = "SECRET_KEY";
@@ -18,22 +17,15 @@ public class PasswordContainer {
     private static final IvParameterSpec IV_SPEC =
             new IvParameterSpec(new byte[] {1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8});
 
-    private record Result(SecretKeySpec secretKey, Cipher cipher) {
-        public Result {
-            Objects.requireNonNull(secretKey);
-            Objects.requireNonNull(cipher);
-        }
-    }
-
-    Result getEncryptingCipher () {
+    Cipher getEncryptingCipher () {
         return getCipher(Cipher.ENCRYPT_MODE);
     }
 
-    Result getDecryptingCipher () {
+    Cipher getDecryptingCipher () {
         return getCipher(Cipher.DECRYPT_MODE);
     }
 
-    Result getCipher (int cipherMode) {
+    Cipher getCipher(int cipherMode) {
         try {
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
             KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALT.getBytes(), 65536, 256);
@@ -43,7 +35,7 @@ public class PasswordContainer {
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             cipher.init(cipherMode, secretKey, IV_SPEC);
 
-            return new Result (secretKey, cipher);
+            return cipher;
         } catch (Exception e) {
             System.out.println("Error while encrypting: " + e);
         }
@@ -57,7 +49,7 @@ public class PasswordContainer {
      */
     public String encryptToBase64 (String plainText) {
         try {
-            Cipher cipher = getEncryptingCipher().cipher();
+            Cipher cipher = getEncryptingCipher();
             byte[] encryptedData = cipher.doFinal(plainText.getBytes(StandardCharsets.UTF_8));
             return Base64.getEncoder().encodeToString(encryptedData);
         } catch (Exception e) {
@@ -73,7 +65,7 @@ public class PasswordContainer {
      */
     public String decryptFromBase64 (String encryptedTextAsBase64) {
         try {
-            Cipher cipher = getDecryptingCipher().cipher();
+            Cipher cipher = getDecryptingCipher();
             byte[] inputData = Base64.getDecoder().decode(encryptedTextAsBase64);
             byte[] decryptedData = cipher.doFinal(inputData);
             return new String(decryptedData);
@@ -90,7 +82,7 @@ public class PasswordContainer {
      */
     public String encryptToHexString (String plainText) {
         try {
-            Cipher cipher = getEncryptingCipher().cipher();
+            Cipher cipher = getEncryptingCipher();
             byte[] encryptedData = cipher.doFinal(plainText.getBytes(StandardCharsets.UTF_8));
             return HexFormat.of().formatHex(encryptedData);
         } catch (Exception e) {
@@ -106,7 +98,7 @@ public class PasswordContainer {
      */
     public String decryptFromHexString (String encryptedTextAsHexString) {
         try {
-            Cipher cipher = getDecryptingCipher().cipher();
+            Cipher cipher = getDecryptingCipher();
             byte[] inputData = HexFormat.of().parseHex(encryptedTextAsHexString);
             byte[] decryptedData = cipher.doFinal(inputData);
             return new String(decryptedData);
