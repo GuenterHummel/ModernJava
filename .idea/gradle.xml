@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/lambda-test" />
+            <option value="$PROJECT_DIR$/locale-test" />
             <option value="$PROJECT_DIR$/machine-learning" />
             <option value="$PROJECT_DIR$/password-container" />
             <option value="$PROJECT_DIR$/regex-test" />

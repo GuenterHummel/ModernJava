@@ -6,6 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.iml" filepath="$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.main.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.test.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.test.iml" />
@@ -26,6 +29,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/locale-test.iml" filepath="$PROJECT_DIR$/locale-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/password-container.iml" filepath="$PROJECT_DIR$/password-container.iml" />
     </modules>
   </component>

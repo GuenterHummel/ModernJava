@@ -5,6 +5,6 @@ include 'regex-test'
 include 'string-test'
 include 'switch-test'
 include 'password-container'
-include 'password-container'
-include 'password-container'
+include 'locale-test'
+include 'locale-test'
 
