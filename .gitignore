@@ -4,6 +4,7 @@
 /.gradle/
 /lambda-test/build/**/*
 /license-test/build/**/*
+/locale-test/build/**/*
 /machine-learning/build/**/*
 /threading-test/build/**/*
 /regex-test/build/**/*
