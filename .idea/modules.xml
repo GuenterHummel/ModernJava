@@ -3,34 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ModernJava.iml" filepath="$PROJECT_DIR$/.idea/ModernJava.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/lambda-test/ModernJava.lambda-test.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.iml" filepath="$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/locale-test/ModernJava.locale-test.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.main.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.test.iml" filepath="$PROJECT_DIR$/.idea/modules/machine-learning/ModernJava.machine-learning.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/password-container/ModernJava.password-container.iml" filepath="$PROJECT_DIR$/.idea/modules/password-container/ModernJava.password-container.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/password-container/ModernJava.password-container.main.iml" filepath="$PROJECT_DIR$/.idea/modules/password-container/ModernJava.password-container.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/password-container/ModernJava.password-container.test.iml" filepath="$PROJECT_DIR$/.idea/modules/password-container/ModernJava.password-container.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.iml" filepath="$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/regex-test/ModernJava.regex-test.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.iml" filepath="$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/string-test/ModernJava.string-test.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/switch-test/ModernJava.switch-test.iml" filepath="$PROJECT_DIR$/.idea/modules/switch-test/ModernJava.switch-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/switch-test/ModernJava.switch-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/switch-test/ModernJava.switch-test.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/switch-test/switch-test/ModernJava.switch-test.switch-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/switch-test/switch-test/ModernJava.switch-test.switch-test.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/switch-test/switch-test/ModernJava.switch-test.switch-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/switch-test/switch-test/ModernJava.switch-test.switch-test.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/switch-test/ModernJava.switch-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/switch-test/ModernJava.switch-test.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/threading-test/ModernJava.threading-test.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/locale-test.iml" filepath="$PROJECT_DIR$/locale-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/password-container.iml" filepath="$PROJECT_DIR$/password-container.iml" />
     </modules>
   </component>
 </project>
