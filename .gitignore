@@ -2,7 +2,11 @@
 /out/
 /.gradle/
 /lambda-test/build/
+/license-test/build/
 /machine-learning/build/
 /threading-test/build/
 /regex-test/build/
 /password-container/build/
+/string-test/build/
+/switch-test/build/
+/threading-test/build/
