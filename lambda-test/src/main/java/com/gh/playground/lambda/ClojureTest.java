@@ -15,6 +15,7 @@ interface SalutationInterface {
 
 public class ClojureTest {
     public static void  main (String[] args) {
+
         SalutationInterface salObj = (greetling) -> "Hello " + greetling + "!";
 
         System.out.println(salObj.salHello("Folks"));
