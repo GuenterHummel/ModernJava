@@ -6,11 +6,11 @@
       <GradleProjectSettings>
         <option name="testRunner" value="PLATFORM" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-8.0.2" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/lambda-test" />
+            <option value="$PROJECT_DIR$/license-test" />
             <option value="$PROJECT_DIR$/locale-test" />
             <option value="$PROJECT_DIR$/machine-learning" />
             <option value="$PROJECT_DIR$/password-container" />

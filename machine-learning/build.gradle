@@ -2,8 +2,6 @@ plugins {
     id 'java-library'
 }
 
-configurations.implementation.setCanBeResolved(true)
-
 test {
     ignoreFailures = true
     maxParallelForks = 1

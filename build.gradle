@@ -4,7 +4,7 @@ ext {
     log4j2_version = "2.20.0"
  	junit_version = '5.9.2'
  	guava_version = '31.1-jre'
- 	bouncy_castle_version = '1.70'
+ 	bouncy_castle_version = '1.77'
 }
 
 allprojects {
@@ -38,10 +38,11 @@ subprojects {
 
 	dependencies {
         testImplementation "org.junit.jupiter:junit-jupiter:${junit_version}"
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
         implementation "org.apache.logging.log4j:log4j-api:${log4j2_version}"
         implementation "org.apache.logging.log4j:log4j-core:${log4j2_version}"
         implementation "com.google.guava:guava:${guava_version}"
-	}
+    }
 
     java {
         toolchain {

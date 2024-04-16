@@ -2,8 +2,6 @@ plugins {
     id 'application'
 }
 
-configurations.implementation.setCanBeResolved(true)
-
 application {
     mainClass = 'com.gh.playground.switchtest.SwitchTest'
 }

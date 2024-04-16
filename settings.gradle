@@ -6,5 +6,6 @@ include 'string-test'
 include 'switch-test'
 include 'password-container'
 include 'locale-test'
-include 'locale-test'
+include 'license-test'
+
 
