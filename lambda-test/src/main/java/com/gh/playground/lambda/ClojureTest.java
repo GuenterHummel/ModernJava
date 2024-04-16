@@ -6,18 +6,19 @@ package com.gh.playground.lambda;
 // This uses the concept of
 // closures
 interface SalutationInterface {
-    public String salHello(String greetling);
+    String salHello(String greetling);
+    default String salHello () {
+        return salHello("You");
+    }
 }
 
 
 public class ClojureTest {
     public static void  main (String[] args) {
 
-        SalutationInterface salObj = (greetling) -> {
-            return "Hello " + greetling + "!";
-        };
-
+        SalutationInterface salObj = (greetling) -> "Hello " + greetling + "!";
 
         System.out.println(salObj.salHello("Folks"));
+        System.out.println(salObj.salHello());
     }
 }
