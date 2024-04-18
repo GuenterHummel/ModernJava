@@ -12,7 +12,7 @@ interface GreetInterface {
 }
 
 public class GreetLambdaTest {
-    public static void  main(String[] args) {
+    public static void  main (String[] args) {
         GreetInterface greetLambda = (a) -> "Hello " + a + "!";
         // also valid: GreetInterface greetLambda = (String a) -> "Hello " + a + "!";
 
