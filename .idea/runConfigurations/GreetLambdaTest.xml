@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="ClojureTest" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="com.gh.playground.lambda.ClojureTest" />
+  <configuration default="false" name="GreetLambdaTest" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="com.gh.playground.lambda.GreetLambdaTest" />
     <module name="ModernJava.lambda-test.main" />
     <extension name="coverage">
       <pattern>
