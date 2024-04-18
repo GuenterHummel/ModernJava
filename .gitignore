@@ -11,4 +11,4 @@
 /password-container/build/**/*
 /string-test/build/**/*
 /switch-test/build/**/*
-/threading-test/build/**/*
+/json-test/build/**/*
