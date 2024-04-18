@@ -5,15 +5,16 @@ package com.gh.playground.lambda;
 // the lambda expression.
 
 interface GreetInterface {
-    String greet(String greetling);
+    String greet(String recipient);
     default String greet() {
         return greet("You");
     }
 }
 
 public class GreetLambdaTest {
-    public static void  main (String[] args) {
-        GreetInterface greetLambda = (greetling) -> "Hello " + greetling + "!";
+    public static void  main(String[] args) {
+        GreetInterface greetLambda = (a) -> "Hello " + a + "!";
+        // also valid: GreetInterface greetLambda = (String a) -> "Hello " + a + "!";
 
         System.out.println(greetLambda.greet("Folks"));
         System.out.println(greetLambda.greet());
