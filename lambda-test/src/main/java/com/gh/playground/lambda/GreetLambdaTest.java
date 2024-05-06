@@ -16,7 +16,8 @@ public class GreetLambdaTest {
         GreetInterface greetLambda = (a) -> "Hello " + a + "!";
         // also valid: GreetInterface greetLambda = (String a) -> "Hello " + a + "!";
 
-        System.out.println(greetLambda.greet("Folks"));
+        String lambdaString = greetLambda.greet("Folks");
+        System.out.println(lambdaString);
         System.out.println(greetLambda.greet());
     }
 }
