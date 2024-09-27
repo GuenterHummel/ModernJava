@@ -48,6 +48,7 @@ public class TestString {
         System.out.println("Testing StringBuffer performance -- end\n");
     }
 
+
     private static void testStringBuilderPerformance() {
         System.out.println("Testing StringBuilder performance -- start\n");
         System.gc();
