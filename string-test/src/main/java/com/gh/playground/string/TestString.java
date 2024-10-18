@@ -18,6 +18,8 @@ public class TestString {
         testStringBufferPerformance();
         testStringBuilderPerformance();
         performGenericStringTests();
+
+        System.out.println("Fact(30) = " + fact (30));
     }
 
     private static void performGenericStringTests() {
@@ -64,5 +66,14 @@ public class TestString {
 
         System.out.println();
         System.out.println("Testing StringBuilder performance -- end\n");
+    }
+
+    private static int fact (int n) {
+        int f = 1;
+        while (n > 0) {
+            f = f * n;
+            n = n - 1;
+        }
+        return f;
     }
 }
