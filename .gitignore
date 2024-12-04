@@ -12,3 +12,4 @@
 /string-test/build/**/*
 /switch-test/build/**/*
 /json-test/build/**/*
+/.idea/workspace.xml
