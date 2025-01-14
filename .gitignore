@@ -13,3 +13,4 @@
 /switch-test/build/**/*
 /json-test/build/**/*
 /.idea/workspace.xml
+/build/reports/problems/problems-report.html
