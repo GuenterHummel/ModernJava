@@ -1,5 +1,6 @@
 # Project exclude paths
 /out/
+/build/
 /distrib/
 /.gradle/
 /lambda-test/build/**/*
@@ -12,5 +13,5 @@
 /string-test/build/**/*
 /switch-test/build/**/*
 /json-test/build/**/*
+/run-exe-test/build/**/*
 /.idea/workspace.xml
-/build/reports/problems/problems-report.html
