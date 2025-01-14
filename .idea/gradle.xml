@@ -5,6 +5,7 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="C:/Gradle/gradle-8.5" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -15,6 +16,7 @@
             <option value="$PROJECT_DIR$/machine-learning" />
             <option value="$PROJECT_DIR$/password-container" />
             <option value="$PROJECT_DIR$/regex-test" />
+            <option value="$PROJECT_DIR$/run-exe-test" />
             <option value="$PROJECT_DIR$/string-test" />
             <option value="$PROJECT_DIR$/switch-test" />
             <option value="$PROJECT_DIR$/threading-test" />

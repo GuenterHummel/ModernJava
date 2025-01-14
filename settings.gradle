@@ -9,4 +9,6 @@ include 'locale-test'
 include 'json-test'
 include 'license-test'
 include 'json-test'
+include 'run-exe-test'
+include 'run-exe-test'
 
