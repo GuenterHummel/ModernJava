@@ -6,6 +6,9 @@ import com.google.gson.GsonBuilder;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
+/**
+ * Learn how to use JSON in java
+ */
 public class JsonTest {
     public static void main(String[] args) {
         System.out.println("Hello world!");
@@ -41,13 +44,21 @@ public class JsonTest {
 
         System.out.println();
         System.out.println("------------------- Print Object vd3 To JSON String ");
-        ValueData vd3 = bar(ValueData.class, ValueItem.class);
+        ValueData vd3 = createValueData(ValueData.class, ValueItem.class);
         System.out.println(gson.toJson(vd3));
 
     }
 
-    public static <T,T2> T bar(Class <T> classOfT,
-                               Class <T2> classOfT2) {
+    /**
+     * createValueData method
+     * @param classOfT
+     * @param classOfT2
+     * @return
+     * @param <T>
+     * @param <T2>
+     */
+    public static <T,T2> T createValueData(Class <T> classOfT,
+                                           Class <T2> classOfT2) {
 
         System.out.println("Juhu");
         System.out.println(classOfT.getName());

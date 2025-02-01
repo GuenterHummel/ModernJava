@@ -46,7 +46,7 @@ subprojects {
 
     java {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(17)
+            languageVersion = JavaLanguageVersion.of(21)
         }
         withSourcesJar()
     }
@@ -79,6 +79,7 @@ subprojects {
 		options.header = "${project.name} ${version}"
 		options.overview="src/main/java/overview.html"
 		options.setTags(tagList)
+        options.addStringOption('Xdoclint:-missing', '-quiet')
 	}
 
     jacocoTestReport {
