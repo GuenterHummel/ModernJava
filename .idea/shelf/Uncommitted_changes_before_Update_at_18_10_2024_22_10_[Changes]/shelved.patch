@@ -1,0 +1,164 @@
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>def current_version = version\r\n\r\next {\r\n    log4j2_version = \"2.20.0\"\r\n \tjunit_version = '5.9.2'\r\n \tguava_version = '31.1-jre'\r\n \tbouncy_castle_version = '1.77'\r\n}\r\n\r\nallprojects {\r\n}\r\n\r\nimport java.text.SimpleDateFormat\r\nimport org.gradle.internal.jvm.Jvm\r\n\r\ndef static buildTime() {\r\n\tdef df = new SimpleDateFormat(\"yyyy-MM-dd HH:mm\") \r\n\tdf.setTimeZone(TimeZone.getTimeZone(\"UTC\"))\r\n\treturn df.format(new Date())\r\n}\r\n\r\ndef currentBuildJvm = Jvm.current()\r\ndef currentBuildTime = buildTime()\r\n\r\nwrapper {\r\n\tgradleVersion = gradle_version\r\n}\r\n\r\nsubprojects {\r\n\tapply plugin: 'jacoco'\r\n\tapply plugin: 'eclipse'\r\n    apply plugin: 'java'\r\n    apply plugin: 'idea'\r\n\r\n\trepositories {\r\n        mavenCentral()\r\n    }\r\n\r\n\tdependencies {\r\n        testImplementation \"org.junit.jupiter:junit-jupiter:${junit_version}\"\r\n        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'\r\n        implementation \"org.apache.logging.log4j:log4j-api:${log4j2_version}\"\r\n        implementation \"org.apache.logging.log4j:log4j-core:${log4j2_version}\"\r\n        implementation \"com.google.guava:guava:${guava_version}\"\r\n    }\r\n\r\n    java {\r\n        toolchain {\r\n            languageVersion = JavaLanguageVersion.of(17)\r\n        }\r\n        withSourcesJar()\r\n    }\r\n\r\n\ttasks.named('jar') {\r\n\t\tmanifest {\r\n\t\t\tattributes \"Built-By\" : \"$System.env.USERNAME\",\r\n\t\t\t\t\t   \"Built-With\" : \"Java ${-> currentBuildJvm}\",\r\n\t\t\t\t\t   \"Gradle-Version\" : \"${-> gradle.gradleVersion}\",\r\n\t\t\t\t       \"Specification-Title\" : \"${-> project.name.toUpperCase()}\",\r\n\t\t\t\t       \"Specification-Vendor\" : \"${-> vendor}\",\r\n\t\t\t\t       \"Specification-Version\" : \"${-> archiveVersion}\",\r\n\t\t\t\t       \"Implementation-Title\" :\t\"${-> project.name}\",\r\n\t\t\t\t       \"Implementation-Vendor\" : \"${-> vendor}\",\r\n\t\t\t\t       \"Implementation-Version\" : \"${-> archiveVersion}\"\r\n        }\r\n    }\r\n\t\r\n\tjavadoc {\r\n\t\tdef tagList = [\"remarks:a:Remarks:\",\r\n\t\t\t\t\t   \"example:a:Example Code:\", \r\n\t\t\t\t\t   \"format:a:Format:\", \r\n\t\t\t\t\t   \"guidance:a:Recommended Reaction:\"] \r\n\r\n\t\tfailOnError = false\r\n\t\ttitle=\"${project.name}, ${version} <br>API Specification\"\r\n\t\toptions.memberLevel = JavadocMemberLevel.PROTECTED\r\n\t\toptions.author= true\r\n\t\toptions.windowTitle = \"${project.name}, ${version} - Java Documentation\"\r\n\t\toptions.header = \"${project.name} ${version}\"\r\n\t\toptions.overview=\"src/main/java/overview.html\"\r\n\t\toptions.setTags(tagList)\r\n\t}\r\n\r\n    jacocoTestReport {\r\n       getAdditionalSourceDirs().from(files(sourceSets.main.allSource.srcDirs))\r\n       getSourceDirectories().from(files(sourceSets.main.allSource.srcDirs))\r\n       getClassDirectories().from(files(sourceSets.main.output))\r\n       reports {\r\n           html.required = true\r\n\t\t   html.outputLocation = file(\"$buildDir/reports/jacoco/html\")\r\n\t\t   xml.required = false\r\n           csv.required = false\r\n        }\r\n    }\r\n\t\t\r\n\ttest {\r\n        ignoreFailures = true\r\n        \r\n        testLogging {\r\n            exceptionFormat = 'full'\r\n        }\r\n        \r\n        jacoco {\r\n            destinationFile = file(\"$buildDir/reports/jacoco/test.exec\")\r\n            reports {\r\n\t       \t\thtml.required = true\r\n           \t\thtml.outputLocation = file(\"$buildDir/reports/jacoco/html\")\r\n           \t}\r\n        }    \r\n    }\r\n\r\n\tgroup = 'at.co.sbs.gh.learning'\r\n}\r\n\r\ntask createDistDirectory() {\r\n\tdef distDir = file(\"${rootProject.projectDir}/distrib\")\r\n\tdistDir.mkdirs()\r\n}\r\n\r\ntask jacocoRootReport(type: JacocoReport) {\r\n    dependsOn = subprojects.test\r\n    getExecutionData().from(files(subprojects.jacocoTestReport.executionData))\r\n    getSourceDirectories().from(files(subprojects.sourceSets.main.allSource.srcDirs))\r\n    getClassDirectories().from(files(subprojects.sourceSets.main.output))\r\n    reports {\r\n    \thtml.outputLocation = file(\"jacoco\")\r\n        html.required = true\r\n        xml.required = true\r\n        csv.required = false\r\n    }\r\n    onlyIf = {\r\n        true\r\n    }\r\n    doFirst {\r\n        //noinspection GroovyAccessibility\r\n        executionData = files(executionData.findAll {\r\n            it.exists()\r\n        })\r\n    }    \r\n}\r\n\r\ndefaultTasks 'clean', 'build', 'javadoc'\r\n// 'publish'\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 5d0d3772b1c9d7523f432ad27c3f1223a7157f0f)
++++ b/build.gradle	(date 1724848625854)
+@@ -46,7 +46,7 @@
+ 
+     java {
+         toolchain {
+-            languageVersion = JavaLanguageVersion.of(17)
++            languageVersion = JavaLanguageVersion.of(21)
+         }
+         withSourcesJar()
+     }
+Index: .idea/ModernJava.iml
+===================================================================
+diff --git a/.idea/ModernJava.iml b/.idea/ModernJava.iml
+deleted file mode 100644
+--- a/.idea/ModernJava.iml	(revision 5d0d3772b1c9d7523f432ad27c3f1223a7157f0f)
++++ /dev/null	(revision 5d0d3772b1c9d7523f432ad27c3f1223a7157f0f)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module version="4">
+-  <component name="AdditionalModuleElements">
+-    <content url="file://$MODULE_DIR$" dumb="true">
+-      <excludeFolder url="file://$MODULE_DIR$/distrib" />
+-    </content>
+-  </component>
+-</module>
+\ No newline at end of file
+Index: lambda-test/src/main/java/com/gh/playground/lambda/GreetLambdaTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.gh.playground.lambda;\r\n\r\n// Defining an interface whose\r\n// implementation is given in\r\n// the lambda expression.\r\n\r\ninterface GreetInterface {\r\n    String greet(String recipient);\r\n    default String greet() {\r\n        return greet(\"You\");\r\n    }\r\n}\r\n\r\npublic class GreetLambdaTest {\r\n    public static void  main(String[] args) {\r\n        GreetInterface greetLambda = (a) -> \"Hello \" + a + \"!\";\r\n        // also valid: GreetInterface greetLambda = (String a) -> \"Hello \" + a + \"!\";\r\n\r\n        String lambdaString = greetLambda.greet(\"Folks\");\r\n        System.out.println(lambdaString);\r\n        System.out.println(greetLambda.greet());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lambda-test/src/main/java/com/gh/playground/lambda/GreetLambdaTest.java b/lambda-test/src/main/java/com/gh/playground/lambda/GreetLambdaTest.java
+--- a/lambda-test/src/main/java/com/gh/playground/lambda/GreetLambdaTest.java	(revision 5d0d3772b1c9d7523f432ad27c3f1223a7157f0f)
++++ b/lambda-test/src/main/java/com/gh/playground/lambda/GreetLambdaTest.java	(date 1718364592000)
+@@ -4,20 +4,37 @@
+ // implementation is given in
+ // the lambda expression.
+ 
++import javax.swing.event.ChangeEvent;
++import javax.swing.event.ChangeListener;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
+ interface GreetInterface {
+-    String greet(String recipient);
++    String greet(String recipient, String title);
+     default String greet() {
+-        return greet("You");
++        return greet("You", "");
+     }
+ }
+ 
+ public class GreetLambdaTest {
+     public static void  main(String[] args) {
+-        GreetInterface greetLambda = (a) -> "Hello " + a + "!";
++        GreetInterface greetLambda =  (a,b) -> "Hello " + b + " "+ a + "!";
+         // also valid: GreetInterface greetLambda = (String a) -> "Hello " + a + "!";
+ 
+-        String lambdaString = greetLambda.greet("Folks");
++        String lambdaString = greetLambda.greet("Folks", "Common");
+         System.out.println(lambdaString);
+         System.out.println(greetLambda.greet());
++
++        ActionListener actionListener = e -> {
++            System.out.println("action listener activated <" + e.toString() + ">");
++        };
++
++        ChangeListener changeListener = e -> {
++            System.out.println("something has changed <" + e.toString() + ">");
++        };
++
++        actionListener.actionPerformed(new ActionEvent("WOOF", 01, "Tata"));
++
++        changeListener.stateChanged(new ChangeEvent("Hello"));
+     }
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\r\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectKey\">\r\n    <option name=\"state\" value=\"project://e2804f05-5315-4fc6-a121-c522a6c26470\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 5d0d3772b1c9d7523f432ad27c3f1223a7157f0f)
++++ b/.idea/misc.xml	(date 1724848557017)
+@@ -7,7 +7,7 @@
+   <component name="ProjectKey">
+     <option name="state" value="project://e2804f05-5315-4fc6-a121-c522a6c26470" />
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: license-test/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'java'\r\n}\r\n\r\ngroup = 'org.example'\r\nversion = '0.0.1'\r\n\r\nrepositories {\r\n    mavenCentral()\r\n}\r\n\r\ndependencies {\r\n    testImplementation platform('org.junit:junit-bom:5.9.1')\r\n    testImplementation 'org.junit.jupiter:junit-jupiter'\r\n    implementation \"org.bouncycastle:bcprov-jdk18on:${bouncy_castle_version}\"\r\n}\r\n\r\ntest {\r\n    useJUnitPlatform()\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/license-test/build.gradle b/license-test/build.gradle
+--- a/license-test/build.gradle	(revision 5d0d3772b1c9d7523f432ad27c3f1223a7157f0f)
++++ b/license-test/build.gradle	(date 1720434156000)
+@@ -13,6 +13,9 @@
+     testImplementation platform('org.junit:junit-bom:5.9.1')
+     testImplementation 'org.junit.jupiter:junit-jupiter'
+     implementation "org.bouncycastle:bcprov-jdk18on:${bouncy_castle_version}"
++
++    implementation fileTree(dir: 'lib/license4j', include: '*.jar')
++
+ }
+ 
+ test {
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <bytecodeTargetLevel target=\"17\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 5d0d3772b1c9d7523f432ad27c3f1223a7157f0f)
++++ b/.idea/compiler.xml	(date 1724848644291)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="17" />
++    <bytecodeTargetLevel target="21" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/json-test\" />\r\n            <option value=\"$PROJECT_DIR$/lambda-test\" />\r\n            <option value=\"$PROJECT_DIR$/license-test\" />\r\n            <option value=\"$PROJECT_DIR$/locale-test\" />\r\n            <option value=\"$PROJECT_DIR$/machine-learning\" />\r\n            <option value=\"$PROJECT_DIR$/password-container\" />\r\n            <option value=\"$PROJECT_DIR$/regex-test\" />\r\n            <option value=\"$PROJECT_DIR$/string-test\" />\r\n            <option value=\"$PROJECT_DIR$/switch-test\" />\r\n            <option value=\"$PROJECT_DIR$/threading-test\" />\r\n          </set>\r\n        </option>\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 5d0d3772b1c9d7523f432ad27c3f1223a7157f0f)
++++ b/.idea/gradle.xml	(date 1724848357819)
+@@ -6,6 +6,7 @@
+       <GradleProjectSettings>
+         <option name="testRunner" value="PLATFORM" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="21" />
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />

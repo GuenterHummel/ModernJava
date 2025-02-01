@@ -1,0 +1,34 @@
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+new file mode 100644
+--- /dev/null	(date 1729284558508)
++++ b/.idea/encodings.xml	(date 1729284558508)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="PROJECT" charset="UTF-8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/ClojureProjectResolveSettings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/ClojureProjectResolveSettings.xml b/.idea/ClojureProjectResolveSettings.xml
+new file mode 100644
+--- /dev/null	(date 1738439370197)
++++ b/.idea/ClojureProjectResolveSettings.xml	(date 1738439370197)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ClojureProjectResolveSettings">
++    <currentScheme>IDE</currentScheme>
++  </component>
++</project>
+\ No newline at end of file
