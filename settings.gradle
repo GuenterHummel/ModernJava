@@ -8,7 +8,7 @@ include 'password-container'
 include 'locale-test'
 include 'json-test'
 include 'license-test'
-include 'json-test'
 include 'run-exe-test'
-
+include 'dukpt-test'
+include 'dukpt-test'
 
