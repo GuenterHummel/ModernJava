@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.gh.playground.threading","c":"SynchronizedExample","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"com.gh.playground.threading","c":"SynchronizedExample","l":"SynchronizedExample()","u":"%3Cinit%3E()"}];updateSearchResults();

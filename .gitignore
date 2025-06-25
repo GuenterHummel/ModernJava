@@ -16,3 +16,5 @@
 /run-exe-test/build/**/*
 /dukpt-test/build/**/*
 /.idea/workspace.xml
+/signature-test/build/**/*
+

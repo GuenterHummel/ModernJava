@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Built-By: gh
+Built-With: Java 21.0.6 (Azul Systems, Inc. 21.0.6+7-LTS)
+Gradle-Version: 8.13
+Specification-Title: THREADING-TEST
+Specification-Vendor: GH
+Specification-Version: task ':threading-test:jar' property 'archiveVersi
+ on'
+Implementation-Title: threading-test
+Implementation-Vendor: GH
+Implementation-Version: task ':threading-test:jar' property 'archiveVers
+ ion'
+

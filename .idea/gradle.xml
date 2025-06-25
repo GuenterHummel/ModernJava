@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/password-container" />
             <option value="$PROJECT_DIR$/regex-test" />
             <option value="$PROJECT_DIR$/run-exe-test" />
+            <option value="$PROJECT_DIR$/signature-test" />
             <option value="$PROJECT_DIR$/string-test" />
             <option value="$PROJECT_DIR$/switch-test" />
             <option value="$PROJECT_DIR$/threading-test" />

@@ -10,5 +10,5 @@ include 'json-test'
 include 'license-test'
 include 'run-exe-test'
 include 'dukpt-test'
-include 'dukpt-test'
+include 'signature-test'
 
