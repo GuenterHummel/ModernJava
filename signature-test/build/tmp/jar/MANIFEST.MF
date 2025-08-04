@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
 Built-By: gh
-Built-With: Java 21.0.6 (Azul Systems, Inc. 21.0.6+7-LTS)
-Gradle-Version: 8.13
-Specification-Title: THREADING-TEST
+Built-With: Java 21.0.8 (Azul Systems, Inc. 21.0.8+9-LTS)
+Gradle-Version: 9.0.0
+Specification-Title: Learning
 Specification-Vendor: GH
-Specification-Version: task ':threading-test:jar' property 'archiveVersi
+Specification-Version: task ':signature-test:jar' property 'archiveVersi
  on'
-Implementation-Title: threading-test
+Implementation-Title: string-test
 Implementation-Vendor: GH
-Implementation-Version: task ':threading-test:jar' property 'archiveVers
+Implementation-Version: task ':signature-test:jar' property 'archiveVers
  ion'
 
