@@ -18,3 +18,4 @@
 /.idea/workspace.xml
 /signature-test/build/**/*
 
+/signature-test/src/main/resources/keys/

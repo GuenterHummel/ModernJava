@@ -10,7 +10,7 @@ public class PerceptronTeacherTest {
     private static final boolean[] testLabels2 = {false, false, true, true};
 
     @Test
-    public void perceptronShouldLearn() {
+    void perceptronShouldLearn() {
         PerceptronTeacher teacher1 = new PerceptronTeacher(testInputs1, testLabels1);
         Perceptron p1 = teacher1.createPerceptron();
 

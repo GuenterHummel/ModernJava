@@ -2,10 +2,6 @@ plugins {
     id 'java-library'
 }
 
-test {
-    ignoreFailures = true
-    maxParallelForks = 1
-}
 
 defaultTasks 'clean', 'build', 'javadoc'
 
@@ -14,4 +10,8 @@ tasks.named('jar') {
         attributes("Specification-Title": "Learning")
         attributes("Implementation-Title": "machine-learning")
     }
+}
+
+test {
+    useJUnitPlatform()
 }

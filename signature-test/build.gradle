@@ -1,14 +1,21 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
-group 'org.example'
-version '0.0.1'
-
-repositories {
-    mavenCentral()
+application {
+    mainClass = 'com.gh.playground.signature.SignatureExample'
 }
 
 test {
-    useJUnitPlatform()
+    ignoreFailures = true
+    maxParallelForks = 1
+}
+
+defaultTasks 'clean', 'build', 'javadoc'
+
+tasks.named('jar') {
+    manifest {
+        attributes("Specification-Title": "Learning")
+        attributes("Implementation-Title": "string-test")
+    }
 }
