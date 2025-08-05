@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rxjava-test/ModernJava.rxjava-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rxjava-test/ModernJava.rxjava-test.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rxjava-test/ModernJava.rxjava-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rxjava-test/ModernJava.rxjava-test.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-tets/ModernJava.string-tets.main.iml" filepath="$PROJECT_DIR$/.idea/modules/string-tets/ModernJava.string-tets.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/string-tets/ModernJava.string-tets.test.iml" filepath="$PROJECT_DIR$/.idea/modules/string-tets/ModernJava.string-tets.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/switch-test/switch-test/ModernJava.switch-test.switch-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/switch-test/switch-test/ModernJava.switch-test.switch-test.main.iml" />
