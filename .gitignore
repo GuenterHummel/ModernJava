@@ -1,8 +1,11 @@
 # Project exclude paths
+/.idea/workspace.xml
+
 /out/
 /build/
 /distrib/
 /.gradle/
+
 /lambda-test/build/**/*
 /license-test/build/**/*
 /locale-test/build/**/*
@@ -15,7 +18,7 @@
 /json-test/build/**/*
 /run-exe-test/build/**/*
 /dukpt-test/build/**/*
-/.idea/workspace.xml
 /signature-test/build/**/*
+/rxjava-test/build/**/*
 
 /signature-test/src/main/resources/keys/
