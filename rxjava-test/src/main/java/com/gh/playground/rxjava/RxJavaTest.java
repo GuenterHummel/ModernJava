@@ -9,5 +9,11 @@ public class RxJavaTest {
         hello.subscribe(System.out::println);
 
         Flowable.just("Hello world").subscribe(System.out::println);
+
+        Flowable<Integer> flow = Flowable.range(1, 6)
+                .map(v -> v * v)
+                .filter(v -> v % 3 == 0).flatMap(v -> Flowable.just(v));
+
+        flow.subscribe(System.out::println);
     }
 }
