@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/run-exe-test" />
             <option value="$PROJECT_DIR$/rxjava-test" />
             <option value="$PROJECT_DIR$/signature-test" />
+            <option value="$PROJECT_DIR$/smallrye-test" />
             <option value="$PROJECT_DIR$/string-test" />
             <option value="$PROJECT_DIR$/switch-test" />
             <option value="$PROJECT_DIR$/threading-test" />

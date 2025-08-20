@@ -20,5 +20,6 @@
 /dukpt-test/build/**/*
 /signature-test/build/**/*
 /rxjava-test/build/**/*
+/smallrye-test/build/**/*
 
 /signature-test/src/main/resources/keys/

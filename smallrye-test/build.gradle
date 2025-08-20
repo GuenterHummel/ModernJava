@@ -1,0 +1,32 @@
+plugins {
+    id 'application'
+}
+
+ext {
+    smallrye_mutiny_version = "2.9.4"
+    junit_version = '5.13.1'
+    guava_version = '33.4.8-jre'
+    bouncy_castle_version = '1.81'
+}
+
+application {
+    mainClass = 'com.gh.playground.smallrye.mutiny.SmallRyeMutinyTest'
+}
+
+dependencies {
+    implementation "io.smallrye.reactive:mutiny:${smallrye_mutiny_version}"
+}
+
+test {
+    ignoreFailures = true
+    maxParallelForks = 1
+}
+
+defaultTasks 'clean', 'build', 'javadoc'
+
+tasks.named('jar') {
+    manifest {
+        attributes("Specification-Title": "Learning")
+        attributes("Implementation-Title": "rxjava-test")
+    }
+}
