@@ -19,9 +19,6 @@
 /run-exe-test/build/**/*
 /dukpt-test/build/**/*
 /signature-test/build/**/*
+/signature-test/src/main/resources/keys/
 /rxjava-test/build/**/*
 /smallrye-test/build/**/*
-
-/signature-test/src/main/resources/keys/
-/signature-test/build/tmp/
-/signature-test/build/
