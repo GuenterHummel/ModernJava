@@ -1,0 +1,79 @@
+[versions]
+arquillian = "1.10.0.Final"
+bouncycastle = "1.81"
+commons_cli = "1.10.0"
+commons_codec = "1.19.0"
+commons_lang3 = "3.18.0"
+credential_secure_storage = "1.0.0"
+cryptoserver_jce = "1.78"
+hamcrest = "3.0"
+jakartaee_api = "10.0.0"
+jakarta_jws = "3.0.0"
+jakarta_xml = "4.0.2"
+jaxws_tools = "4.0.3"
+jersey = "3.1.11"
+junit = "5.13.4"
+junit_platform_launcher = "1.13.4"
+kotlinx_serialization_json = "1.9.0"
+miktex = "25.03"
+osgi_annotation = "8.1.0"
+sbs_commons = "2.0.1"
+slf4j = "2.0.17"
+smallrye_config = "3.13.4"
+wildfly_arquillian_container = "5.0.1.Final"
+#For the wildfly component versions, see https://mvnrepository.com/artifact/org.wildfly/wildfly-ee-galleon-pack/37.0.1.Final
+wildfly_dist = "37.0.1.Final"
+wildfly_elytron_credential_store = "2.6.4.Final"
+wildfly_embedded = "29.0.1.Final"
+wildfly_protocol = "29.0.1.Final"
+pmd = "7.17.0"
+spotbugs = "4.9.4"
+kotlin_serialization_plugin = "2.2.20"
+spotbugs_plugin = "6.3.0"
+owasp_plugin = "12.1.3"
+cyclonedx_plugin = "2.4.0"
+license_plugin = "2.9"
+
+[libraries]
+arquillian-bom = { group = "org.jboss.arquillian", name = "arquillian-bom", version.ref = "arquillian" }
+arquillian-container-embedded = { group = "org.wildfly.arquillian", name = "wildfly-arquillian-container-embedded", version.ref = "wildfly_arquillian_container" }
+arquillian-junit5-container = { group = "org.jboss.arquillian.junit5", name = "arquillian-junit5-container", version.ref = "arquillian" }
+bouncycastle-prov = { group = "org.bouncycastle", name = "bcprov-jdk18on", version.ref = "bouncycastle" }
+bouncycastle-pkix = { group = "org.bouncycastle", name = "bcpkix-jdk18on", version.ref = "bouncycastle" }
+commons-cli = { group = "commons-cli", name = "commons-cli", version.ref = "commons_cli" }
+commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version.ref = "commons_lang3" }
+commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons_codec" }
+credential-secure-storage = { group = "com.microsoft", name = "credential-secure-storage", version.ref = "credential_secure_storage" }
+cryptoserver-jce = { group = "Utimaco", name = "crypto-server-jce", version.ref = "cryptoserver_jce" }
+hamcrest = { group = "org.hamcrest", name = "hamcrest", version.ref = "hamcrest" }
+jakartaee-api = { group = "jakarta.platform", name = "jakarta.jakartaee-api", version.ref = "jakartaee_api"}
+jakarta-xml-bind-api = { group = "jakarta.xml.bind", name = "jakarta.xml.bind-api", version.ref = "jakarta_xml" }
+jakarta-xml-ws-api = { group = "jakarta.xml.ws", name = "jakarta.xml.ws-api", version.ref = "jakarta_xml" }
+jakarta-jws-api = { group = "jakarta.jws", name = "jakarta.jws-api", version.ref = "jakarta_jws" }
+jaxws-tools = { group = "com.sun.xml.ws", name = "jaxws-tools", version.ref = "jaxws_tools" }
+jaxws-rt = { group = "com.sun.xml.ws", name = "rt", version.ref ="jaxws_tools" }
+jersey-client = { group = "org.glassfish.jersey.core", name = "jersey-client", version.ref = "jersey" }
+jersey-hk2 = { group = "org.glassfish.jersey.inject", name = "jersey-hk2", version.ref = "jersey" }
+jersey-jackson = { group = "org.glassfish.jersey.media", name = "jersey-media-json-jackson", version.ref = "jersey" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version.ref = "junit_platform_launcher" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx_serialization_json"}
+miktex-portable = { group = "at.co.sbs.devtools", name = "miktex-portable", version.ref = "miktex" }
+osgi-annotation = { group = "org.osgi", name = "osgi.annotation", version.ref = "osgi_annotation"}
+sbs-commons-lang = { group = "at.co.sbs.commons", name = "sbs-commons-lang", version.ref = "sbs_commons" }
+sbs-commons-tlv = { group = "at.co.sbs.commons", name = "sbs-commons-tlv", version.ref = "sbs_commons" }
+slf4j-api = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
+slf4j-nop = { group = "org.slf4j", name = "slf4j-nop", version.ref = "slf4j" }
+smallrye-config = { group = "io.smallrye.config", name = "smallrye-config", version.ref = "smallrye_config" }
+spotbugs-annotations = { group = "com.github.spotbugs", name = "spotbugs-annotations", version.ref = "spotbugs" }
+wildfly-dist = { group = "org.wildfly", name = "wildfly-dist", version.ref = "wildfly_dist" }
+wildfly-elytron-credential-store = { group = "org.wildfly.security", name = "wildfly-elytron-credential-store", version.ref = "wildfly_elytron_credential_store" }
+wildfly-embedded = { group = "org.wildfly.core", name = "wildfly-embedded", version.ref="wildfly_embedded" }
+wildfly-protocol = { group = "org.wildfly.core", name = "wildfly-protocol", version.ref="wildfly_protocol" }
+
+[plugins]
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin_serialization_plugin" }
+spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs_plugin" }
+owasp-dependency-check = { id = "org.owasp.dependencycheck", version.ref = "owasp_plugin" }
+cyclonedx = { id = "org.cyclonedx.bom", version.ref = "cyclonedx_plugin" }
+license = { id = "com.github.jk1.dependency-license-report", version.ref = "license_plugin" }
