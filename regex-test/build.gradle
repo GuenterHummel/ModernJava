@@ -1,9 +1,9 @@
 plugins {
-    id 'application'
+    id "application"
 }
 
 application {
-    mainClass = 'com.gh.playground.regex.PciTestAppender'
+    mainClass = "com.gh.playground.regex.PciTestAppender"
 }
 
 test {
@@ -11,9 +11,9 @@ test {
     maxParallelForks = 1
 }
 
-defaultTasks 'clean', 'build', 'javadoc'
+defaultTasks "clean", "build", "javadoc"
 
-tasks.named('jar') {
+tasks.named("jar") {
     manifest {
         attributes("Specification-Title": "Learning")
         attributes("Implementation-Title": "lambda-test")

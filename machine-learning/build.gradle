@@ -1,11 +1,11 @@
 plugins {
-    id 'java-library'
+    id "java-library"
 }
 
 
-defaultTasks 'clean', 'build', 'javadoc'
+defaultTasks "clean", "build", "javadoc"
 
-tasks.named('jar') {
+tasks.named("jar") {
     manifest {
         attributes("Specification-Title": "Learning")
         attributes("Implementation-Title": "machine-learning")

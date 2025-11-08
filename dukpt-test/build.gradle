@@ -1,18 +1,18 @@
 plugins {
-    id 'java'
+    id "java"
 }
 
-group = 'com.gh.playground'
-version = '0.0.1'
+group = "com.gh.playground"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.bouncycastle:bcprov-jdk18on:1.80'
-    testImplementation platform('org.junit:junit-bom:5.12.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation "org.bouncycastle:bcprov-jdk18on:1.80"
+    testImplementation platform("org.junit:junit-bom:5.12.0")
+    testImplementation "org.junit.jupiter:junit-jupiter"
 }
 
 test {

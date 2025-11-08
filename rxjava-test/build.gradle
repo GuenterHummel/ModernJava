@@ -1,16 +1,16 @@
 plugins {
-    id 'application'
+    id "application"
 }
 
 ext {
     rxjava_version = "3.1.11"
-    junit_version = '5.13.1'
-    guava_version = '33.4.8-jre'
-    bouncy_castle_version = '1.81'
+    junit_version = "5.13.1"
+    guava_version = "33.4.8-jre"
+    bouncy_castle_version = "1.81"
 }
 
 application {
-    mainClass = 'com.gh.playground.rxjava.RxJavaTest'
+    mainClass = "com.gh.playground.rxjava.RxJavaTest"
 }
 
 dependencies {
@@ -22,9 +22,9 @@ test {
     maxParallelForks = 1
 }
 
-defaultTasks 'clean', 'build', 'javadoc'
+defaultTasks "clean", "build", "javadoc"
 
-tasks.named('jar') {
+tasks.named("jar") {
     manifest {
         attributes("Specification-Title": "Learning")
         attributes("Implementation-Title": "rxjava-test")
