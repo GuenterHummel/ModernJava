@@ -22,3 +22,4 @@
 /signature-test/src/main/resources/keys/
 /rxjava-test/build/**/*
 /smallrye-test/build/**/*
+/jaas-prj-01/**/*
