@@ -1,5 +1,5 @@
 # Project exclude paths
-/.idea/workspace.xml
+/.idea/
 
 /out/
 /build/
@@ -22,4 +22,5 @@
 /signature-test/src/main/resources/keys/
 /rxjava-test/build/**/*
 /smallrye-test/build/**/*
-/jaas-prj-01/**/*
+/jaas-prj-01/build/**/*
+/volatile-test/build/**/*
