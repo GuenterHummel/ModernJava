@@ -6,6 +6,7 @@ import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.callback.NameCallback;
 import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
+import javax.security.auth.login.FailedLoginException;
 import javax.security.auth.login.LoginException;
 import javax.security.auth.spi.LoginModule;
 import java.io.IOException;
@@ -20,7 +21,6 @@ public class GhLoginModule implements LoginModule {
 
     @Override
     public void initialize(Subject subject, CallbackHandler callbackHandler, Map<String, ?> sharedState, Map<String, ?> options) {
-        System.out.println("GhLoginModule.initialize...");
         this.subject = subject;
         this.callbackHandler = callbackHandler;
     }
@@ -29,7 +29,6 @@ public class GhLoginModule implements LoginModule {
     public boolean login() throws LoginException {
         boolean flag = false;
 
-        System.out.println("GhLoginModule.login...");
         Callback[] callbackArray = new Callback[2];
         callbackArray[0] = new NameCallback("User Name:");
         callbackArray[1] = new PasswordCallback("Password:", false);
@@ -48,6 +47,7 @@ public class GhLoginModule implements LoginModule {
                 }
                 i++;
             }
+            if (flag == false) throw new FailedLoginException(("authentication failure..."));
         } catch (IOException | UnsupportedCallbackException e) {
             System.out.println(e.getMessage());
             return false;
@@ -57,19 +57,28 @@ public class GhLoginModule implements LoginModule {
 
     @Override
     public boolean commit() throws LoginException {
-        System.out.println("GhLoginModule.commit...");
-        return true;
+        boolean flag = false;
+        if (subject != null && !(subject.getPrincipals().contains(principal))) {
+            subject.getPrincipals().add(principal);
+            flag = true;
+        }
+        return flag;
     }
 
     @Override
     public boolean abort() throws LoginException {
-        System.out.println("GhLoginModule.abort...");
-        return false;
+        if (subject != null && principal != null && subject.getPrincipals().contains(principal)) {
+            subject.getPrincipals().remove(principal);
+        }
+        subject = null;
+        principal = null;
+        return true;
     }
 
     @Override
     public boolean logout() throws LoginException {
-        System.out.println("GhLoginModule.logout...");
-        return false;
+        subject.getPrincipals().remove(principal);
+        subject=null;
+        return true;
     }
 }

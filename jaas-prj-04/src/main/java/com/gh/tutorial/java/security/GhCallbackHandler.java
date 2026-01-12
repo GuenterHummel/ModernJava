@@ -13,8 +13,6 @@ import java.io.InputStreamReader;
 public class GhCallbackHandler implements CallbackHandler {
     @Override
     public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
-        System.out.println("GhCallbackHandler.handle...");
-
         NameCallback nameCallback = (NameCallback) callbacks[0];
         System.out.println(nameCallback.getPrompt());
         nameCallback.setName((new BufferedReader(new InputStreamReader(System.in))).readLine());
