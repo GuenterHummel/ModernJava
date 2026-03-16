@@ -16,7 +16,7 @@ public class RxJavaTest {
 
         Flowable<Integer> flow = Flowable.range(1, 6)
                 .map(v -> v * v)
-                .filter(v -> v % 3 == 0).flatMap(Flowable::just);
+                .filter(v -> v % 3 != 0).flatMap(Flowable::just);
 
         disposable = flow.subscribe(System.out::println);
         System.out.println("disposed = <" + disposable.isDisposed() + ">");

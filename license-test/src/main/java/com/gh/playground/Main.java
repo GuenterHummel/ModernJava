@@ -6,6 +6,15 @@ import org.bouncycastle.util.encoders.Hex;
 import java.math.BigInteger;
 import java.util.Base64;
 
+import static com.google.common.base.StandardSystemProperty.JAVA_VM_NAME;
+import static com.google.common.base.StandardSystemProperty.JAVA_VM_VENDOR;
+import static com.google.common.base.StandardSystemProperty.JAVA_VM_VERSION;
+import static com.google.common.base.StandardSystemProperty.OS_ARCH;
+import static com.google.common.base.StandardSystemProperty.OS_NAME;
+import static com.google.common.base.StandardSystemProperty.OS_VERSION;
+
+
+
 public class Main {
     public static void main(String args[]) {
         String licenseKey = "key/eyJhY2NvdW50Ijp7ImlkIjoiMWZkZGNlYzgtOGRkMy00ZDhkLTliMTYtMjE1Y2FjMGY5YjUyIn0sInByb2R1Y3QiOnsiaWQiOiIxZjA4NmVjOS1hOTQzLTQ2ZWEtOWRhNC1lNjJjMjE4MGMyZjQifSwicG9saWN5Ijp7ImlkIjoiMjlkOWQ4ZDMtYmYxZC00NGQxLWExYjktODIwNDQwZDQyMmZmIiwiZHVyYXRpb24iOm51bGx9LCJ1c2VyIjpudWxsLCJsaWNlbnNlIjp7ImlkIjoiZjNkNjU3ZGUtMmI1MC00YWRmLTg2N2ItZWYwM2RjODZhM2ZlIiwiY3JlYXRlZCI6IjIwMjEtMTAtMTRUMTU6MjA6MzIuNjcwWiIsImV4cGlyeSI6IjIwMjEtMTAtMTVUMDA6MDA6MDAuMDAwWiJ9fQ==.Z_fDBaVqmBxHWkzi_TCPWGOrE0rItN_xEFdc8TtR0ahB-Gx84S6r4pXPuTxeIREtLCVJt3lcFy_WuCNeCOFRAA==";
@@ -52,5 +61,14 @@ public class Main {
         } else {
             System.out.println("License key is invalid!");
         }
+        System.out.printf("OS architecture: %s\n", OS_ARCH);
+        System.out.printf("OS name: %s\n", OS_NAME);
+        System.out.printf("OS version: %s\n", OS_VERSION);
+
+        System.out.printf("JVM name: %s\n", JAVA_VM_NAME);
+        System.out.printf("JVM vendor: %s\n", JAVA_VM_VENDOR);
+        System.out.printf("JVM version: %s\n", JAVA_VM_VERSION);
+
     }
+
 }

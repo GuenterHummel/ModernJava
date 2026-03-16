@@ -1,14 +1,11 @@
 package com.gh.tutorial.java.security;
 
-import com.google.j2objc.annotations.OnDealloc;
-
 import javax.security.auth.Subject;
 import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.security.PrivilegedAction;
 import java.util.concurrent.Callable;
 
 public class Driver {
