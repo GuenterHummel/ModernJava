@@ -3,7 +3,8 @@ package com.gh.playground;
 import org.bouncycastle.crypto.params.Ed25519PublicKeyParameters;
 import org.bouncycastle.crypto.signers.Ed25519Signer;
 import org.bouncycastle.util.encoders.Hex;
-import java.math.BigInteger;
+
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 import static com.google.common.base.StandardSystemProperty.JAVA_VM_NAME;
@@ -15,7 +16,7 @@ import static com.google.common.base.StandardSystemProperty.OS_VERSION;
 
 
 
-public class Main {
+public class LicenseTest {
     public static void main(String args[]) {
         String licenseKey = "key/eyJhY2NvdW50Ijp7ImlkIjoiMWZkZGNlYzgtOGRkMy00ZDhkLTliMTYtMjE1Y2FjMGY5YjUyIn0sInByb2R1Y3QiOnsiaWQiOiIxZjA4NmVjOS1hOTQzLTQ2ZWEtOWRhNC1lNjJjMjE4MGMyZjQifSwicG9saWN5Ijp7ImlkIjoiMjlkOWQ4ZDMtYmYxZC00NGQxLWExYjktODIwNDQwZDQyMmZmIiwiZHVyYXRpb24iOm51bGx9LCJ1c2VyIjpudWxsLCJsaWNlbnNlIjp7ImlkIjoiZjNkNjU3ZGUtMmI1MC00YWRmLTg2N2ItZWYwM2RjODZhM2ZlIiwiY3JlYXRlZCI6IjIwMjEtMTAtMTRUMTU6MjA6MzIuNjcwWiIsImV4cGlyeSI6IjIwMjEtMTAtMTVUMDA6MDA6MDAuMDAwWiJ9fQ==.Z_fDBaVqmBxHWkzi_TCPWGOrE0rItN_xEFdc8TtR0ahB-Gx84S6r4pXPuTxeIREtLCVJt3lcFy_WuCNeCOFRAA==";
         String publicKey = "e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee788";
@@ -38,7 +39,7 @@ public class Main {
 
         // Decode base64 signature and signing data to byte arrays
         byte[] signatureBytes = Base64.getUrlDecoder().decode(encodedSignature);
-        byte[] signingDataBytes = signingData.getBytes();
+        byte[] signingDataBytes = signingData.getBytes(StandardCharsets.UTF_8);
 
         // Set up Ed25519 verifier
         Ed25519PublicKeyParameters params = new Ed25519PublicKeyParameters(publicKeyBytes, 0);
@@ -52,7 +53,7 @@ public class Main {
         if (ok) {
             // Decode base64 dataset to a string
             byte[] datasetBytes = Base64.getUrlDecoder().decode(encodedDataset);
-            String dataset = new String(datasetBytes);
+            String dataset = new String(datasetBytes, StandardCharsets.UTF_8);
 
             System.out.println("License key is valid!");
             System.out.println(

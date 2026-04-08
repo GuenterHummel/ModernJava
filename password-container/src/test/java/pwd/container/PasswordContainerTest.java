@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PasswordContainerTest {
+class PasswordContainerTest {
     static PasswordContainer pwc;
 
     static String SHORT_LENGTH_PASSWORD  = "TEST_14";
@@ -19,32 +19,32 @@ public class PasswordContainerTest {
     }
 
     @Test
-    public void generateAndRetrieveShortLengthPasswordFromBase64() {
+    void generateAndRetrieveShortLengthPasswordFromBase64() {
         assertEquals(SHORT_LENGTH_PASSWORD, pwc.decryptFromBase64(pwc.encryptToBase64(SHORT_LENGTH_PASSWORD)));
     }
 
     @Test
-    public void generateAndRetrieveMiddleLengthPasswordFromBase64() {
+    void generateAndRetrieveMiddleLengthPasswordFromBase64() {
         assertEquals(MIDDLE_LENGTH_PASSWORD, pwc.decryptFromBase64(pwc.encryptToBase64(MIDDLE_LENGTH_PASSWORD)));
     }
 
     @Test
-    public void generateAndRetrieveLongLengthPasswordFromBase64() {
+    void generateAndRetrieveLongLengthPasswordFromBase64() {
         assertEquals(LONG_LENGTH_PASSWORD, pwc.decryptFromBase64(pwc.encryptToBase64(LONG_LENGTH_PASSWORD)));
     }
 
     @Test
-    public void generateAndRetrieveShortLengthFromHexString() {
+    void generateAndRetrieveShortLengthFromHexString() {
         assertEquals(SHORT_LENGTH_PASSWORD, pwc.decryptFromHexString(pwc.encryptToHexString(SHORT_LENGTH_PASSWORD)));
     }
 
     @Test
-    public void generateAndRetrieveMiddleLengthFromHexString() {
+    void generateAndRetrieveMiddleLengthFromHexString() {
         assertEquals(MIDDLE_LENGTH_PASSWORD, pwc.decryptFromHexString(pwc.encryptToHexString(MIDDLE_LENGTH_PASSWORD)));
     }
 
     @Test
-    public void generateAndRetrieveLongLengthFromHexString() {
+    void generateAndRetrieveLongLengthFromHexString() {
         assertEquals(LONG_LENGTH_PASSWORD, pwc.decryptFromHexString(pwc.encryptToHexString(LONG_LENGTH_PASSWORD)));
     }
 }

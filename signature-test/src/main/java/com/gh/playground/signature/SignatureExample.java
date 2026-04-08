@@ -55,7 +55,7 @@ public class SignatureExample {
             // digest() method is called
             // to calculate message digest of the input string
             // returned as array of byte
-            byte[] messageDigest = md.digest(input.getBytes());
+            byte[] messageDigest = md.digest(input.getBytes(StandardCharsets.UTF_8));
 
             // Convert byte array into signum representation
             BigInteger no = new BigInteger(1, messageDigest);
@@ -80,9 +80,11 @@ public class SignatureExample {
         }
     }
 
+    /*
     private static String encodeToBase64(String input) {
         return Base64.getEncoder().encodeToString(HexFormat.of().parseHex(input));
     }
+    */
 
     private static String signMessage (String message)  {
 

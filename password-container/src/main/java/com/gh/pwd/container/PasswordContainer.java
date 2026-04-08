@@ -28,7 +28,7 @@ public class PasswordContainer {
     Cipher getCipher(int cipherMode) {
         try {
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-            KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALT.getBytes(), 65536, 256);
+            KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALT.getBytes(StandardCharsets.UTF_8), 65536, 256);
             SecretKey tmp = factory.generateSecret(spec);
             SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
 
@@ -68,7 +68,7 @@ public class PasswordContainer {
             Cipher cipher = getDecryptingCipher();
             byte[] inputData = Base64.getDecoder().decode(encryptedTextAsBase64);
             byte[] decryptedData = cipher.doFinal(inputData);
-            return new String(decryptedData);
+            return new String(decryptedData, StandardCharsets.UTF_8);
         } catch (Exception e) {
             System.out.println("Error while decrypting: " + e);
         }
@@ -101,7 +101,7 @@ public class PasswordContainer {
             Cipher cipher = getDecryptingCipher();
             byte[] inputData = HexFormat.of().parseHex(encryptedTextAsHexString);
             byte[] decryptedData = cipher.doFinal(inputData);
-            return new String(decryptedData);
+            return new String(decryptedData, StandardCharsets.UTF_8);
         } catch (Exception e) {
             System.out.println("Error while decrypting: " + e);
         }

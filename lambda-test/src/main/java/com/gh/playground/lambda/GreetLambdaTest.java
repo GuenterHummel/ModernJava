@@ -9,6 +9,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@FunctionalInterface
 interface GreetInterface {
     String greet(String recipient, String title);
     default String greet() {

@@ -1,13 +1,12 @@
 Manifest-Version: 1.0
-Built-By: null
-Built-With: Java 21.0.8 (Oracle Corporation 21.0.8+12-LTS-250)
-Gradle-Version: 9.2.0
+Built-By: gh
+Built-With: Java 21.0.8 (Azul Systems, Inc. 21.0.8+9-LTS)
+Built-For: Java 25
+Gradle-Version: 9.4.0
 Specification-Title: Learning
 Specification-Vendor: GH
-Specification-Version: task ':signature-test:jar' property 'archiveVersi
- on'
-Implementation-Title: string-test
+Specification-Version: 0.0.1
+Implementation-Title: signature-test
 Implementation-Vendor: GH
-Implementation-Version: task ':signature-test:jar' property 'archiveVers
- ion'
+Implementation-Version: 0.0.1
 

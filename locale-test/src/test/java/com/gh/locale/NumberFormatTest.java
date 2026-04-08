@@ -20,10 +20,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * <p>It appears that this implementation is not correct as the test below fails.</p>
  */
-public class NumberFormatTest {
+class NumberFormatTest {
 
     @Test
-    public void test() {
+    void test() {
         final Locale locale = new Locale("de", "AT");
 
         // since https://www.unicode.org/cldr/charts/28/by_type/numbers.symbols.html#Symbols_ the grouping separator for

@@ -1,14 +1,10 @@
 plugins {
-    id "java"
+    java
 }
 
-group = "org.example"
+group = "com.gh.playground"
 version = "0.0.1"
 
 repositories {
     mavenCentral()
-}
-
-test {
-    useJUnitPlatform()
 }

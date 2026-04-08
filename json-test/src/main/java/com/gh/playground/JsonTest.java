@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Learn how to use JSON in java
@@ -16,7 +17,7 @@ public class JsonTest {
         ValueItem vi1 = new ValueItem("timestamp1", "feature1", 12345, "data1");
         ValueItem vi2 = new ValueItem("timestamp2", "feature2", 53421, "data2");
 
-        ArrayList<ValueItem> vilList = new ArrayList<>();
+        List<ValueItem> vilList = new ArrayList<>();
         vilList.add(vi1);
         vilList.add(vi2);
 

@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
  * This class implements a kind of perceptrons.
  */
 public class Perceptron {
-    final static private Logger logger = LogManager.getLogger(Perceptron.class.getName());
+    // final static private Logger logger = LogManager.getLogger(Perceptron.class.getName());
 
     private final float[] weights;
 

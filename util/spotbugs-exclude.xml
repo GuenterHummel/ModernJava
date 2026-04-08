@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<FindBugsFilter xmlns="https://github.com/spotbugs/filter/3.0.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="https://github.com/spotbugs/filter/3.0.0 https://raw.githubusercontent.com/spotbugs/spotbugs/4.1.1/spotbugs/etc/findbugsfilter.xsd">
+    <!-- Ignore warnings when mutable objects are stored in Cmds, because this is used often and is OK because the commands are only called internally -->
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP2" />
+        <OR>
+            <Class name="com.gh.ml.perceptron.Perceptron" />
+            <Class name="com.gh.ml.perceptron.PerceptronTeacher" />
+        </OR>
+    </Match>
+    <!-- Ignore warnings when storage references are stored in objects, because they are intended to be mutable -->
+    <Match>
+        <!-- It's common for constructors to throw exceptions (Java standard classes also do that). Also, finalize will
+        be removed in a future Java release, so 'finalizer attacks' will not be possible and it's no problem to throw in
+         a constructor anymore. -->
+        <Bug pattern="CT_CONSTRUCTOR_THROW" />
+    </Match>
+</FindBugsFilter>
