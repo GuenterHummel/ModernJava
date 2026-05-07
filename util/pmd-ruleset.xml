@@ -10,16 +10,11 @@
 
     <!-- Category: Best Practices -->
     <rule ref="category/java/bestpractices.xml">
-        <!-- System.out, System.err and printStackTrace are used for the command line interface: -->
         <exclude name="SystemPrintln"/>
         <exclude name="AvoidPrintStackTrace"/>
-        <!-- This rule mistakes ASN1 OIDs (e.g., "2.5.29.35") for IP addresses -->
         <exclude name="AvoidUsingHardCodedIP"/>
-        <!-- Our constants are mainly used with interfaces (between web service and client, or host and HSM) -->
         <exclude name="ConstantsInInterface"/>
-        <!-- Varargs only makes sense in very specific situations, not for replacing array parameters in general -->
         <exclude name="UseVarargs"/>
-        <!-- The following rules are not suitable for production code: -->
         <exclude name="UnitTestAssertionsShouldIncludeMessage"/>
         <exclude name="UnitTestContainsTooManyAsserts"/>
         <exclude name="UnitTestShouldIncludeAssert"/>
@@ -28,12 +23,10 @@
         <exclude name="ArrayIsStoredDirectly"/>
         <exclude name="MethodReturnsInternalArray"/>
         <exclude name="LiteralsFirstInComparisons"/>
-        <!-- increases readability of source: -->
         <exclude name="AbstractClassWithoutAbstractMethod"/>
         <exclude name="GuardLogStatement"/>
-        <!-- performance is not an issue, increases readability of source: -->
-        <!-- This rule makes sense with enhanced switch statements in Java 13, but we are still on language level 8 -->
-        <exclude name="ExhaustiveSwitchHasDefault" />
+        <exclude name="ExhaustiveSwitchHasDefault"/>
+        <exclude name="AvoidReassigningParameters"/>
     </rule>
 
     <!-- Category: Error Prone -->
@@ -53,27 +46,19 @@
         </properties>
     </rule>
     <rule ref="category/java/errorprone.xml">
-        <!-- We use Date and Calendar extensively in our API, replacing it would break compatibility -->
         <exclude name="ReplaceJavaUtilCalendar"/>
         <exclude name="ReplaceJavaUtilDate"/>
-        <!-- We don't always follow the JavaBean rules for getters/setters -->
         <exclude name="NonSerializableClass"/>
-        <!-- Integer literals are often used for checking counts of arguments, etc. -->
         <exclude name="AvoidLiteralsInIfCondition"/>
-        <!-- In many cases (e.g., for error/log messages), the code is more readable when literals are inline -->
         <exclude name="AvoidDuplicateLiterals"/>
-        <!-- We often catch Exception (mostly for logging, but also for error handling in some cases)  -->
         <exclude name="AvoidCatchingGenericException"/>
-        <!-- An assignment to null is OK for "dereferencing" objects that are no longer required -->
         <exclude name="NullAssignment"/>
-        <!-- It's OK to return null when the API allows it -->
         <exclude name="ReturnEmptyCollectionRatherThanNull"/>
-        <!-- We sometimes use this for getters -->
         <exclude name="AvoidFieldNameMatchingMethodName"/>
-        <!-- The following rules are specific to J2EE -->
         <exclude name="DoNotTerminateVM"/>
         <exclude name="UseProperClassLoader"/>
         <exclude name="TestClassWithoutTestCases"/>
         <exclude name="ConstructorCallsOverridableMethod"/>
+        <exclude name="DoNotCallGarbageCollectionExplicitly"/>
     </rule>
 </ruleset>

@@ -53,6 +53,7 @@ public class PrintTest implements Printable, ActionListener {
         }
     }
 
+    @Override
     public int print(Graphics g, PageFormat pf, int pageIndex)
             throws PrinterException {
 
@@ -97,6 +98,7 @@ public class PrintTest implements Printable, ActionListener {
         return PAGE_EXISTS;
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         PrinterJob job = PrinterJob.getPrinterJob();
         job.setPrintable(this);
@@ -105,7 +107,7 @@ public class PrintTest implements Printable, ActionListener {
             try {
                 job.print();
             } catch (PrinterException ex) {
-                /* The job did not successfully complete */
+                System.out.println(ex.getMessage());
             }
         }
     }
@@ -116,9 +118,12 @@ public class PrintTest implements Printable, ActionListener {
             String cn = UIManager.getSystemLookAndFeelClassName();
             UIManager.setLookAndFeel(cn); // Use the native L&F
         } catch (Exception cnf) {
+            System.out.println(cnf.getMessage());
         }
+
         JFrame f = new JFrame("Printing Pagination Example");
         f.addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent e) {System.exit(0);}
         });
         JButton printButton = new JButton("Print Pages");

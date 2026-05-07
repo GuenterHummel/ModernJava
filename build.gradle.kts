@@ -65,6 +65,7 @@ subprojects {
         testFixturesCompileOnly(rootProject.libs.spotbugs.annotations)
         implementation(rootProject.libs.log4j.api)
         implementation(rootProject.libs.log4j.core)
+        testFixturesImplementation(rootProject.libs.assertj.core)
     }
     configurations {
         testImplementation {

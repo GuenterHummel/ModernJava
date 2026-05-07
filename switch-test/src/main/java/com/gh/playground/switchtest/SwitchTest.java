@@ -14,7 +14,7 @@ public class SwitchTest {
     public static void main(String[] args) {
         System.out.println("The different switch");
 
-        int a = 0;
+        int a;
 
         try {
             a = SecureRandom.getInstanceStrong().nextInt(1, 4);

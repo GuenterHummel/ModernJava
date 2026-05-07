@@ -17,4 +17,11 @@
          a constructor anymore. -->
         <Bug pattern="CT_CONSTRUCTOR_THROW" />
     </Match>
+    <Match>
+        <AND>
+            <Class name="com.gh.playground.threading.SynchronizedExample" />
+        </AND>
+        <!-- sleep by intention for testing purposes -->
+        <Bug pattern="SWL_SLEEP_WITH_LOCK_HELD" />
+    </Match>
 </FindBugsFilter>

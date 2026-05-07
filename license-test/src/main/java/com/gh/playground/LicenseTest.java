@@ -62,13 +62,13 @@ public class LicenseTest {
         } else {
             System.out.println("License key is invalid!");
         }
-        System.out.printf("OS architecture: %s\n", OS_ARCH);
-        System.out.printf("OS name: %s\n", OS_NAME);
-        System.out.printf("OS version: %s\n", OS_VERSION);
+        System.out.printf("OS architecture: %s%n", OS_ARCH);
+        System.out.printf("OS name: %s%n", OS_NAME);
+        System.out.printf("OS version: %s%n", OS_VERSION);
 
-        System.out.printf("JVM name: %s\n", JAVA_VM_NAME);
-        System.out.printf("JVM vendor: %s\n", JAVA_VM_VENDOR);
-        System.out.printf("JVM version: %s\n", JAVA_VM_VERSION);
+        System.out.printf("JVM name: %s%n", JAVA_VM_NAME);
+        System.out.printf("JVM vendor: %s%n", JAVA_VM_VENDOR);
+        System.out.printf("JVM version: %s%n", JAVA_VM_VERSION);
 
     }
 
